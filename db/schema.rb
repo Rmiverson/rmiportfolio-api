@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_03_192716) do
+ActiveRecord::Schema.define(version: 2021_06_03_205447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abouts", force: :cascade do |t|
+    t.text "summary"
+    t.text "skills"
+    t.text "experience"
+    t.text "education"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "landings", force: :cascade do |t|
+    t.text "who_para"
+    t.text "what_para"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "mores", force: :cascade do |t|
+    t.text "summary"
+    t.text "photo"
+    t.text "art"
+    t.text "music"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string "project_name"
@@ -29,13 +54,6 @@ ActiveRecord::Schema.define(version: 2021_06_03_192716) do
     t.string "password_digest"
     t.string "first_name"
     t.string "last_name"
-    t.text "who_para"
-    t.text "what_para"
-    t.text "summary"
-    t.text "skills"
-    t.text "experience"
-    t.text "education"
-    t.text "other_para"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
